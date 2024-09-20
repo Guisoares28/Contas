@@ -1,11 +1,9 @@
-<<<<<<< HEAD
 from Model.data import DataBase
 from Service.converteData import servico
 import psycopg2
-=======
-from Controller.data import DataBase
 
->>>>>>> 7a0dbb2426ccdc2718067961a4d2c289221f7150
+
+
 
 
 class ControllerConta:
@@ -14,7 +12,7 @@ class ControllerConta:
     def cadastrarConta():
         conexao, cursor = DataBase.conectar()
         descricao = input("Descrição: ")
-<<<<<<< HEAD
+        
         while(True):
             try:
                 dataVencimento_string = input("Data Vencimento: ")
@@ -38,10 +36,7 @@ class ControllerConta:
             return "\nNão foi possível cadastrar a conta, Tente novamente"
         finally:
             cursor.close()
-            conexao.close()
-            
-        
-=======
+            conexao.close()   
         dataVencimento = input("Data Vencimento: ")
         valor = float(input("Valor: "))
         status = False
@@ -51,5 +46,5 @@ class ControllerConta:
         cursor.close()
         conexao.close()
         return "Conta cadastrada com Sucesso!"
->>>>>>> 7a0dbb2426ccdc2718067961a4d2c289221f7150
+    
 
