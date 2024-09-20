@@ -3,9 +3,6 @@ from Service.converteData import servico
 import psycopg2
 
 
-
-
-
 class ControllerConta:
 
     @staticmethod
@@ -37,14 +34,6 @@ class ControllerConta:
         finally:
             cursor.close()
             conexao.close()   
-        dataVencimento = input("Data Vencimento: ")
-        valor = float(input("Valor: "))
-        status = False
-        SQL_QUERY = ("INSERT INTO contas (descricao, datavencimento, valor, status) values (%s, %s, %s, %s)")
-        cursor.execute(SQL_QUERY,(descricao,dataVencimento,valor,status))
-        conexao.commit()
-        cursor.close()
-        conexao.close()
-        return "Conta cadastrada com Sucesso!"
+    
     
 
