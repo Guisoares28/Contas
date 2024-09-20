@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 from Model.data import DataBase
 from Service.converteData import servico
 import psycopg2
+=======
+from Controller.data import DataBase
+
+>>>>>>> 7a0dbb2426ccdc2718067961a4d2c289221f7150
 
 
 class ControllerConta:
@@ -9,6 +14,7 @@ class ControllerConta:
     def cadastrarConta():
         conexao, cursor = DataBase.conectar()
         descricao = input("Descrição: ")
+<<<<<<< HEAD
         while(True):
             try:
                 dataVencimento_string = input("Data Vencimento: ")
@@ -35,4 +41,15 @@ class ControllerConta:
             conexao.close()
             
         
+=======
+        dataVencimento = input("Data Vencimento: ")
+        valor = float(input("Valor: "))
+        status = False
+        SQL_QUERY = ("INSERT INTO contas (descricao, datavencimento, valor, status) values (%s, %s, %s, %s)")
+        cursor.execute(SQL_QUERY,(descricao,dataVencimento,valor,status))
+        conexao.commit()
+        cursor.close()
+        conexao.close()
+        return "Conta cadastrada com Sucesso!"
+>>>>>>> 7a0dbb2426ccdc2718067961a4d2c289221f7150
 
